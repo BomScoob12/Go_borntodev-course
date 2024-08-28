@@ -17,8 +17,7 @@ func main() {
 	}
 	fmt.Println(employee1)
 
-	// -----------
-
+	// ----------- array, slice
 	employeeList := [3]employee{}
 	employeeList[0] = employee{
 		employeeID: "101",
@@ -36,6 +35,11 @@ func main() {
 		phone: "0999999999",
 	}
 
+	employeeSlice := []employee{}
+
+	employeeSlice = append(employeeSlice, employee1)
+
 	fmt.Println(employeeList)
+	fmt.Println(employeeSlice)
 	
 }
