@@ -13,9 +13,11 @@ func main() {
 	courseName = append(courseName, "Ruby", "C++", "C#", "HTML", "CSS", "JavaScript")
 	fmt.Println("Course Name: ", courseName)
 
-	courseWeb:= courseName[7:9+1]
+	// start 7 end at n-1
+	courseWeb:= courseName[7:10]
 	fmt.Println("Course Web: ", courseWeb)
 
+	// first 5 element
 	first5Element := courseName[:5]
 	fmt.Println("First 5 Element: ", first5Element)
 

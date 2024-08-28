@@ -1,0 +1,1 @@
+Struct is something like class
