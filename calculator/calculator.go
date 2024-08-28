@@ -14,7 +14,7 @@ func getInput(promt string) float64 {
 	fmt.Printf("%v", promt)
 	input, _ := reader.ReadString('\n')
 	value, err := strconv.ParseFloat(strings.TrimSpace(input), 64)
-	if err != nil{
+	if err != nil {
 		message, _ := fmt.Scanf("%v must be number.", promt)
 		panic(message)
 	}
@@ -29,37 +29,45 @@ func getOperator() string {
 }
 
 func add(val1 float64, val2 float64) float64 {
-	return val1 + val2;
+	return val1 + val2
 }
 
 func minus(val1 float64, val2 float64) float64 {
-	return val1 + val2;
+	return val1 - val2
 }
 
 func divide(val1 float64, val2 float64) float64 {
-	return val1 + val2;
+	return val1 / val2
 }
 
 func multiply(val1 float64, val2 float64) float64 {
-	return val1 + val2;
+	return val1 * val2
 }
-func main() {
-	value1 := getInput(" Enter first number: ")
-	value2 := getInput(" Enter secound number: ")
-	
-	var result float64
 
-	switch operator := getOperator(); 
-	operator {
+func main() {
+	round := int(getInput("How many number do you want to calculated? :"))
+
+	var result float64
+	result = getInput("number 1 :")
+	
+	for i := 1; i <= round-1; i++ {
+		operator := getOperator()
+		
+		tmp := getInput("number" + strconv.Itoa(i+1) + " :")
+		
+		switch operator {
 		case "+":
-			result = add(value1, value2)
+			result = add(result, tmp)
 		case "-":
-			result = minus(value1, value2)
+			result = minus(result, tmp)
 		case "*":
-			result = multiply(value1, value2)
+			result = multiply(result, tmp)
 		case "/":
-			result = divide(value1, value2)
+			result = divide(result, tmp)
+		default:
+			panic("Wrong operator")
+		}
 	}
 
-	fmt.Printf("%v is the result", result)
-}	
+	fmt.Printf("%v is the result!", result)
+}
