@@ -1,0 +1,7 @@
+statusId,statusName,statusDescription,haveTaskLimit
+1,"No Status",NULL,1
+2,"To Do",,1
+3,Doing,"Being worked on",1
+4,Done,Finished,1
+23,"in progress","No status name",1
+28,"New name",test,1
