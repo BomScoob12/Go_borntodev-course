@@ -7,7 +7,9 @@ import (
 	"strings"
 )
 
-func main() {
+// readerFile is a function to read file
+// and print the content
+func readerFile() {
 	file, err := os.Open("statusTodo.csv")
 	if err != nil {
 		panic(err)
